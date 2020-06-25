@@ -141,9 +141,9 @@ export default new Vuex.Store({
                   commit('getBrandsProducts',response.data.brand)
               })
       },
-      sendMessageFromContact({commit},object){
+      async sendMessageFromContact({commit},object){
           commit('loaderContact', true)
-          axios.post("https://heavens-shop.herokuapp.com/api/contact",{firstName:object.firstName, lastName : object.lastName,
+          await axios.post("https://heavens-shop.herokuapp.com/api/contact",{firstName:object.firstName, lastName : object.lastName,
               mail:object.mail, subject:object.subject, message:object.message} )
               .then(() =>{
                   commit('loaderContact', false)

@@ -106,28 +106,31 @@
         },
         methods:{
             ...mapActions(['sendMessageFromContact']),
-            sendContactForm() {
+            async sendContactForm() {
                 this.$v.contactForm.$touch()
                 if (this.$v.contactForm.$invalid) {
                     this.error()
                 }
                 else {
-                    this.sendMessageFromContact(this.contactForm)
-                    setTimeout(()=>{
-                        if (this.getterStatusMsg === true) {
-                            this.contactForm.firstName = null
-                            this.contactForm.lastName = null
-                            this.contactForm.mail = null
-                            this.contactForm.subject = null
-                            this.contactForm.message = null
-                            document.querySelector('#firstName').value = ""
-                            document.querySelector('#lastName').value = ""
-                            document.querySelector('#mail').value = ""
-                            document.querySelector('#subject').value = ""
-                            document.querySelector('#message').value = ""
-                            this.success()
-                        }
-                    },1400)
+                    await this.sendMessageFromContact(this.contactForm)
+                        .then(()=>{
+                            setTimeout(()=>{
+                                if (this.getterStatusMsg === true) {
+                                    this.contactForm.firstName = null
+                                    this.contactForm.lastName = null
+                                    this.contactForm.mail = null
+                                    this.contactForm.subject = null
+                                    this.contactForm.message = null
+                                    document.querySelector('#firstName').value = ""
+                                    document.querySelector('#lastName').value = ""
+                                    document.querySelector('#mail').value = ""
+                                    document.querySelector('#subject').value = ""
+                                    document.querySelector('#message').value = ""
+                                    this.success()
+                                }
+                            },1400)
+                        })
+
                 }
             },
             error(){
