@@ -68,6 +68,12 @@
     }
 </script>
 <style scoped lang="scss">
+    ion-toolbar{
+        --background: #ecedef;
+    }
+    ion-searchbar{
+        background-color: #ecedef ;
+    }
     .fadeHeight-enter-active, .fadeHeight-leave-active {
         transition: all 0.5s;
         max-height: 255px;
