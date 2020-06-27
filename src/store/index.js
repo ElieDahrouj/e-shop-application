@@ -125,7 +125,6 @@ export default new Vuex.Store({
       OneNew({commit},id){
           axios.get("https://heavens-shop.herokuapp.com/api/news/"+id)
               .then(response =>{
-                  console.log(response.data)
                   commit('getOneNew',response.data.new)
               })
       },
