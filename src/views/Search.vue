@@ -14,19 +14,16 @@
         </ion-content>
 
         <h3 v-else class="text-danger text-center">Aucun résultat !</h3>
-        <customFooter />
     </div>
 </template>
 <script>
     import card from "../components/cardProducts"
     import customHead from "../components/customHead"
-    import customFooter from "../components/customFooter"
     import {mapActions, mapGetters} from 'vuex'
     export default {
         name: "home",
         components: {
             customHead,
-            customFooter,
             card
         },
         computed:{

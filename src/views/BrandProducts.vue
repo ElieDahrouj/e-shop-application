@@ -13,13 +13,11 @@
                 Cette marque n'existe pas, nous sommes désolé !
             </div>
         </ion-content>
-        <customFooter />
     </div>
 </template>
 <script>
     import card from "../components/cardProducts"
     import customHead from "../components/customHead"
-    import customFooter from "../components/customFooter"
     import { mapActions, mapGetters} from 'vuex'
     export default {
         name: "brandProducts",
@@ -30,7 +28,6 @@
         },
         components:{
             customHead,
-            customFooter,
             card
         },
         methods:{

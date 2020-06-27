@@ -55,20 +55,16 @@
                 </iframe>
             </div>
         </ion-content>
-
-        <customFooter />
     </div>
 </template>
 <script>
     import { required, email } from 'vuelidate/lib/validators'
     import customHead from "../components/customHead"
-    import customFooter from "../components/customFooter"
     import {mapActions, mapGetters} from 'vuex'
     export default {
         name:'contact',
         components:{
             customHead,
-            customFooter,
         },
         data(){
             return {

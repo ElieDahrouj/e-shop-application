@@ -13,17 +13,14 @@
                 Cet article n'existe pas, nous sommes désolé !
             </div>
         </ion-content>
-        <customFooter/>
     </div>
 </template>
 <script>
     import customHead from "../components/customHead"
-    import customFooter from "../components/customFooter"
     import { mapActions, mapGetters} from 'vuex'
     export default {
         name:"news",
         components:{
-            customFooter,
             customHead
         },
         computed:{

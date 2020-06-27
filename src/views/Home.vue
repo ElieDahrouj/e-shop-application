@@ -23,14 +23,12 @@
             <news :dataNews="getterFiveNews.news"></news>
         </ion-content>
 
-        <customFooter />
   </div>
 </template>
 
 <script>
     import news from "../components/cardNews"
     import customHead from "../components/customHead"
-    import customFooter from "../components/customFooter"
     import { mapActions, mapGetters} from 'vuex'
     export default {
         name: "home",
@@ -39,7 +37,6 @@
         },
         components:{
             customHead,
-            customFooter,
             news
         },
         methods:{

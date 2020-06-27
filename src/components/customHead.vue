@@ -20,12 +20,14 @@
 
         <transition name="fadeHeight">
             <div v-if="statusSearch">
-                <ion-searchbar @keyup.enter="researchProducts" autocomplete="off" @input="filterProducts=$event.target.value" placeholder="Rechercher" color="dark" type="tel"></ion-searchbar>
+                <ion-searchbar @keyup.enter="researchProducts" autocomplete="off" @input="filterProducts=$event.target.value" placeholder="Rechercher" color="dark" type="text"></ion-searchbar>
             </div>
         </transition>
+        <customFooter />
     </ion-header>
 </template>
 <script>
+    import customFooter from "../components/customFooter"
     import {mapActions } from 'vuex'
     export default {
         name:"customHead",
@@ -34,6 +36,9 @@
                 statusSearch : false,
                 filterProducts : null,
             }
+        },
+        components:{
+            customFooter
         },
         methods:{
             ...mapActions(['searchProducts']),
