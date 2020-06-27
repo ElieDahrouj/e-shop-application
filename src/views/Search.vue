@@ -12,8 +12,9 @@
                 </ion-infinite-scroll-content>
             </ion-infinite-scroll>
         </ion-content>
-
-        <h3 v-else class="text-danger text-center">Aucun résultat !</h3>
+        <ion-content v-else>
+            <h3 class="text-danger text-center mt-5">Aucun résultat !</h3>
+        </ion-content>
     </div>
 </template>
 <script>
